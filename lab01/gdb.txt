@@ -1,9 +1,9 @@
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
+1. set args = value  eg: (set count = 1)
+2. break function_name , break hello.c: line_number
+3. finish 
+4. step 
+5. continue
+6. print variable
+7. watch variable 
+8. info local
+9. quit
