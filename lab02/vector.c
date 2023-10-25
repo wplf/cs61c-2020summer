@@ -58,7 +58,7 @@ vector_t *vector_new() {
     vector_t *retval;
 
     /* First, we need to allocate memory on the heap for the struct */
-    retval = (vector_t *)malloc(sizeof(vector_t))
+    retval = (vector_t *)malloc(sizeof(vector_t));
 
     /* Check our return value to make sure we got memory */
     if (retval == NULL) {
@@ -97,7 +97,7 @@ int vector_get(vector_t *v, size_t loc) {
      * Otherwise, return what is in the passed location.
      */
     if (loc < v->size) {
-        return v[loc];
+        return v->data[loc];
     } else {
         return 0;
     }
@@ -117,7 +117,7 @@ void vector_set(vector_t *v, size_t loc, int value) {
      * allocated?  Remember that unset locations should contain a value of 0.
      */
     if(loc < v->size){
-        v[loc] = value;
+        v->data[loc] = value;
     }
     else{
         if(realloc(v->data, loc) != NULL){
