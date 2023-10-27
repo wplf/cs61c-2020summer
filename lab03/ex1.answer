@@ -1,0 +1,4 @@
+1. .text, .data are the sections of code and data, respectively  
+2. the output is 34, fib 数列的第10个数 
+3. 0x10000010 
+4. change the t3 = 0x0000000D at the beq line
