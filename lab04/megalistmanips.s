@@ -56,26 +56,56 @@ map:
     add s0, a0, x0      # save address of this node in s0
     add s1, a1, x0      # save address of function in s1
     add t0, x0, x0      # t0 is a counter
-
+    
     # remember that each node is 12 bytes long:
     # - 4 for the array pointer
     # - 4 for the size of the array
     # - 4 more for the pointer to the next node
 mapLoop:
-    add t1, s0, x0      # load the address of the array of current node into t1
+    # a0 pointer to node,
+    # a1 pointer to function
+
+    # pointer to arr: 0(a0)
+    # size: 4(a0)
+    # pointer to next: 8(a0)
+
+    # add t1, s0, x0      # load the address of the array of current node into t1
+    
+    lw t1, 0(s0)        # wplf: pointer to array
     lw t2, 4(s0)        # load the size of the node's array into t2
 
-    add t1, t1, t0      # offset the array address by the count
-    lw a0, 0(t1)        # load the value at that address into a0
+    # t1 是 函数指针
+    slli t3, t0, 2      # offset the array address by the count
+    add t4, t3, t1
+    lw a0, 0(t4)        # load the value at that address into a0
 
+    # 函数s1中读取了t1寄存器，
+    # 但是对调用她的函数没有影响，我们不需要, 根据convention，我们将所有的s寄存器和后面使用到的寄存器都保存一下
+    addi sp, sp, -4
+    sw ra, 0(sp)
+    sw s0, 4(sp)
+    sw s1, 8(sp)
+    sw t4, 12(sp)
+    sw t0, 16(sp)
+    sw t2, 20(sp)
     jalr s1             # call the function on that value.
+    lw s0, 4(sp)
+    lw s1, 8(sp)
+    lw t4, 12(sp)
+    lw t0, 16(sp)
+    lw t2, 20(sp)
+    lw ra, 0(sp)
+    
+    addi sp, sp, 4
 
-    sw a0, 0(t1)        # store the returned value back into the array
+
+    sw a0, 0(t4)        # store the returned value back into the array
     addi t0, t0, 1      # increment the count
     bne t0, t2, mapLoop # repeat if we haven't reached the array size yet
 
-    la a0, 8(s0)        # load the address of the next node into a0
-    lw a1, 0(s1)        # put the address of the function back into a1 to prepare for the recursion
+    lw a0, 8(s0)        # load the address of the next node into a0
+    add a1, x0, s1 
+    # lw a1, 0(s1)        # put the address of the function back into a1 to prepare for the recursion
 
     jal  map            # recurse
 done:
