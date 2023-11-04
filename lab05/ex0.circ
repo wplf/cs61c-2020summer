@@ -4,8 +4,7 @@
 
   <lib desc="#Wiring" name="0">
     <tool name="Splitter">
-      <a name="fanout" val="4"/>
-      <a name="incoming" val="4"/>
+      <a name="facing" val="west"/>
       <a name="appear" val="center"/>
     </tool>
     <tool name="Pin">
@@ -91,20 +90,20 @@ end type_architecture;&#13;
   </lib>
   <lib desc="#TCL" name="7">
     <tool name="TclGeneric">
-      <a name="content">library ieee;
-use ieee.std_logic_1164.all;
-
-entity TCL_Generic is
-  port(
-    --Insert input ports below
-    horloge_i  : in  std_logic;                    -- input bit example
-    val_i      : in  std_logic_vector(3 downto 0); -- input vector example
-
-	  --Insert output ports below
-    max_o      : out std_logic;                    -- output bit example
-    cpt_o      : out std_logic_Vector(3 downto 0)  -- output vector example
-  );
-end TCL_Generic;
+      <a name="content">library ieee;&#13;
+use ieee.std_logic_1164.all;&#13;
+&#13;
+entity TCL_Generic is&#13;
+  port(&#13;
+    --Insert input ports below&#13;
+    horloge_i  : in  std_logic;                    -- input bit example&#13;
+    val_i      : in  std_logic_vector(3 downto 0); -- input vector example&#13;
+&#13;
+	  --Insert output ports below&#13;
+    max_o      : out std_logic;                    -- output bit example&#13;
+    cpt_o      : out std_logic_Vector(3 downto 0)  -- output vector example&#13;
+  );&#13;
+end TCL_Generic;&#13;
 </a>
     </tool>
   </lib>
@@ -117,7 +116,7 @@ end TCL_Generic;
     </tool>
   </lib>
   <lib desc="#BFH-Praktika" name="9"/>
-  <main name="AddMachine"/>
+  <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
     <a name="simlimit" val="1000"/>
@@ -149,47 +148,23 @@ end TCL_Generic;
     <tool lib="1" name="AND Gate"/>
     <tool lib="1" name="OR Gate"/>
   </toolbar>
-  <circuit name="AddMachine">
-    <a name="circuit" val="AddMachine"/>
+  <circuit name="main">
+    <a name="circuit" val="main"/>
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif bold 16"/>
     <a name="circuitnamedbox" val="true"/>
     <a name="circuitvhdlpath" val=""/>
-    <wire from="(470,290)" to="(500,290)"/>
-    <wire from="(260,250)" to="(290,250)"/>
-    <wire from="(420,290)" to="(470,290)"/>
-    <wire from="(340,330)" to="(360,330)"/>
-    <wire from="(330,240)" to="(350,240)"/>
-    <wire from="(260,370)" to="(470,370)"/>
-    <wire from="(350,240)" to="(500,240)"/>
-    <wire from="(350,290)" to="(360,290)"/>
-    <wire from="(350,240)" to="(350,290)"/>
-    <wire from="(470,290)" to="(470,370)"/>
-    <wire from="(220,230)" to="(290,230)"/>
-    <wire from="(260,250)" to="(260,370)"/>
-    <comp lib="0" loc="(500,240)" name="Pin">
+    <wire from="(210,190)" to="(240,190)"/>
+    <wire from="(100,170)" to="(160,170)"/>
+    <wire from="(100,210)" to="(160,210)"/>
+    <comp lib="0" loc="(100,170)" name="Pin"/>
+    <comp lib="0" loc="(100,210)" name="Pin"/>
+    <comp lib="0" loc="(240,190)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="label" val="ADD_OUT"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(500,290)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="label" val="REG_OUT"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="8" loc="(408,169)" name="Text">
-      <a name="text" val="PUT CIRCUITRY HERE"/>
-    </comp>
-    <comp lib="4" loc="(360,260)" name="Register"/>
-    <comp lib="0" loc="(340,330)" name="Clock"/>
-    <comp lib="3" loc="(330,240)" name="Adder"/>
-    <comp lib="0" loc="(220,230)" name="Constant">
-      <a name="width" val="8"/>
-    </comp>
+    <comp lib="1" loc="(210,190)" name="OR Gate"/>
   </circuit>
 </project>
