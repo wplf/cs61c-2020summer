@@ -1,0 +1,18 @@
+1.  the pages are 32 bytes.
+2.  TLB Hits and Misses:  1 vs 9
+    Page Hits and Page Faults: 0 vs 9
+3.  No, we will check TLB first, and TLB miss is page miss. TLB hit, and we will go to physical memory directly, don't record as page hit. 
+4.  First, we get an address, and split it to virtual page and offset.  We will check page table, if the page number is valid. Then we will go to TLB translation lookaside book, and find the physical page number. If hit, we go to the physical memory directly. It not, we will evict the LRU page and put this page into TLB and physical memory.
+
+EX2:
+00, 20, 40, 60, 80, A0, C0, E0, 00, 20
+virtual page number : virtual memory
+physical page number: physical memory 
+TLB size has no relation with them.
+
+EX3:
+If our physical memory is bigger enough, then the page table may store more pages than the TLB holds In that case, the Page Table holds the path from VPN to PPN, but the TLB cannot hold that. So the case happens.
+
+EX4:
+1. The p1, p2, p3, p4 are different processes.  Their TLBs are isolated. 
+2. The higher TLB misses percent is because processes have different TLBs, which size is 4, prettey small. 

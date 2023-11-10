@@ -48,44 +48,44 @@
   <lib desc="#I/O" name="5"/>
   <lib desc="#HDL-IP" name="6">
     <tool name="VHDL Entity">
-      <a name="content">--------------------------------------------------------------------------------
--- HEIG-VD, institute REDS, 1400 Yverdon-les-Bains
--- Project :
--- File    :
--- Autor   :
--- Date    :
---
---------------------------------------------------------------------------------
--- Description :
---
---------------------------------------------------------------------------------
-
-library ieee;
-  use ieee.std_logic_1164.all;
-  --use ieee.numeric_std.all;
-
-entity VHDL_Component is
-  port(
-  ------------------------------------------------------------------------------
-  --Insert input ports below
-    horloge_i  : in  std_logic;                    -- input bit example
-    val_i      : in  std_logic_vector(3 downto 0); -- input vector example
-  ------------------------------------------------------------------------------
-  --Insert output ports below
-    max_o      : out std_logic;                    -- output bit example
-    cpt_o      : out std_logic_Vector(3 downto 0)  -- output vector example
-    );
-end VHDL_Component;
-
---------------------------------------------------------------------------------
---Complete your VHDL description below
-architecture type_architecture of VHDL_Component is
-
-
-begin
-
-
-end type_architecture;
+      <a name="content">--------------------------------------------------------------------------------&#13;
+-- HEIG-VD, institute REDS, 1400 Yverdon-les-Bains&#13;
+-- Project :&#13;
+-- File    :&#13;
+-- Autor   :&#13;
+-- Date    :&#13;
+--&#13;
+--------------------------------------------------------------------------------&#13;
+-- Description :&#13;
+--&#13;
+--------------------------------------------------------------------------------&#13;
+&#13;
+library ieee;&#13;
+  use ieee.std_logic_1164.all;&#13;
+  --use ieee.numeric_std.all;&#13;
+&#13;
+entity VHDL_Component is&#13;
+  port(&#13;
+  ------------------------------------------------------------------------------&#13;
+  --Insert input ports below&#13;
+    horloge_i  : in  std_logic;                    -- input bit example&#13;
+    val_i      : in  std_logic_vector(3 downto 0); -- input vector example&#13;
+  ------------------------------------------------------------------------------&#13;
+  --Insert output ports below&#13;
+    max_o      : out std_logic;                    -- output bit example&#13;
+    cpt_o      : out std_logic_Vector(3 downto 0)  -- output vector example&#13;
+    );&#13;
+end VHDL_Component;&#13;
+&#13;
+--------------------------------------------------------------------------------&#13;
+--Complete your VHDL description below&#13;
+architecture type_architecture of VHDL_Component is&#13;
+&#13;
+&#13;
+begin&#13;
+&#13;
+&#13;
+end type_architecture;&#13;
 </a>
     </tool>
   </lib>
@@ -273,6 +273,27 @@ end TCL_Generic;
     <a name="clabelfont" val="SansSerif bold 16"/>
     <a name="circuitnamedbox" val="true"/>
     <a name="circuitvhdlpath" val=""/>
+    <wire from="(380,120)" to="(440,120)"/>
+    <wire from="(480,130)" to="(540,130)"/>
+    <wire from="(410,140)" to="(440,140)"/>
+    <wire from="(320,210)" to="(480,210)"/>
+    <wire from="(190,110)" to="(250,110)"/>
+    <wire from="(190,130)" to="(250,130)"/>
+    <wire from="(290,120)" to="(320,120)"/>
+    <wire from="(170,210)" to="(320,210)"/>
+    <wire from="(410,140)" to="(410,280)"/>
+    <wire from="(170,90)" to="(190,90)"/>
+    <wire from="(170,150)" to="(190,150)"/>
+    <wire from="(540,130)" to="(540,200)"/>
+    <wire from="(540,130)" to="(630,130)"/>
+    <wire from="(190,90)" to="(190,110)"/>
+    <wire from="(190,130)" to="(190,150)"/>
+    <wire from="(320,160)" to="(320,210)"/>
+    <wire from="(610,200)" to="(610,280)"/>
+    <wire from="(480,210)" to="(480,240)"/>
+    <wire from="(480,240)" to="(550,240)"/>
+    <wire from="(540,200)" to="(550,200)"/>
+    <wire from="(410,280)" to="(610,280)"/>
     <comp lib="0" loc="(170,90)" name="Pin">
       <a name="width" val="8"/>
       <a name="label" val="in1"/>
@@ -284,12 +305,16 @@ end TCL_Generic;
     <comp lib="0" loc="(170,210)" name="Pin">
       <a name="label" val="CLK"/>
     </comp>
-    <comp lib="0" loc="(560,130)" name="Pin">
+    <comp lib="3" loc="(290,120)" name="Multiplier"/>
+    <comp lib="4" loc="(320,90)" name="Register"/>
+    <comp lib="3" loc="(480,130)" name="Adder"/>
+    <comp lib="0" loc="(630,130)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="width" val="8"/>
       <a name="label" val="out1"/>
       <a name="labelloc" val="east"/>
     </comp>
+    <comp lib="4" loc="(550,170)" name="Register"/>
   </circuit>
 </project>
