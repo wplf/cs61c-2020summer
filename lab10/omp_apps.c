@@ -22,12 +22,21 @@ double dotp_naive(double* x, double* y, int arr_size) {
 // EDIT THIS FUNCTION PART 1
 double dotp_manual_optimized(double* x, double* y, int arr_size) {
   double global_sum = 0.0;
+  int num_threads = omp_get_num_threads(); 
 #pragma omp parallel
   {
-#pragma omp for
-    for (int i = 0; i < arr_size; i++)
+    int i;    
+#pragma omp for lastprivate(i)
+    for (i = 0; i+4 < arr_size; i++)
+     printf("%d\n", i);
 #pragma omp critical
       global_sum += x[i] * y[i];
+      global_sum += x[i+1] * y[i+1];
+      global_sum += x[i+2] * y[i+2];
+      global_sum += x[i+3] * y[i+3];
+  }
+  for(; i < arr_size; i++){
+    global_sum += x[i] * y[i];
   }
   return global_sum;
 }
@@ -37,9 +46,8 @@ double dotp_reduction_optimized(double* x, double* y, int arr_size) {
   double global_sum = 0.0;
 #pragma omp parallel
   {
-#pragma omp for
+#pragma omp for reduction(+:global_sum)
     for (int i = 0; i < arr_size; i++)
-#pragma omp critical
       global_sum += x[i] * y[i];
   }
   return global_sum;
