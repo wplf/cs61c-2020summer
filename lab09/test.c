@@ -2,9 +2,9 @@
 #include<omp.h>
 #include<x86intrin.h>
 // #include <x86intrin.h>
-__m128i _127 = _mm_set1_epi32(127);
 
 int main(){
+        __m128i _127 = _mm_set1_epi32(127);
 
         int i;
         int array[100] = {0};

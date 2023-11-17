@@ -5,6 +5,9 @@
 #define ARRAY_SIZE 10000000
 #define REPEAT     100
 
+int min(int x, int y){
+	return x < y? x : y;
+}
 
 void v_add_naive(double* x, double* y, double* z) {
 	#pragma omp parallel
@@ -15,19 +18,24 @@ void v_add_naive(double* x, double* y, double* z) {
 }
 
 // Edit this function (Method 1) 
-void v_add_optimized_adjacent(double* x, double* y, double* z) {
-     #pragma omp parallel
+void v_add_optimized_adjacent(double* x, double* y, double* z) { 
+	int num_threads = omp_get_num_threads();
+	#pragma omp parallel
 	{
-		for(int i=0; i<ARRAY_SIZE; i++)
+		int thread_id = omp_get_thread_num();
+		for(int i = thread_id; i < ARRAY_SIZE; i += num_threads)
 			z[i] = x[i] + y[i];
 	}
 }
 
 // Edit this function (Method 2) 
 void v_add_optimized_chunks(double* x, double* y, double* z) {
-          #pragma omp parallel
-	{
-		for(int i=0; i<ARRAY_SIZE; i++)
+	int num_threads = omp_get_num_threads();
+	int chunk = ARRAY_SIZE % num_threads == 0 ? ARRAY_SIZE / num_threads : ARRAY_SIZE / num_threads + 1 ; 
+	#pragma omp parallel
+	{			
+		int thread_id = omp_get_thread_num();
+		for(int i = thread_id * chunk; i< min(ARRAY_SIZE, (thread_id+1) * chunk) ; i++)
 			z[i] = x[i] + y[i];
 	}
 }

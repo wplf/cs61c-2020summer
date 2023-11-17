@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "x86intrin.h": "c",
+        "time.h": "c",
+        "common.h": "c"
+    }
+}
