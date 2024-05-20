@@ -1,0 +1,200 @@
+{
+  "main": {
+    "id": "7d717ca0859563a0",
+    "type": "split",
+    "children": [
+      {
+        "id": "1e584dd0f16ac1bc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c9a130a385607e52",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "reference-card.pdf"
+              }
+            }
+          }
+        ],
+        "stacked": true
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9ae862e87380211d",
+    "type": "split",
+    "children": [
+      {
+        "id": "beb837a3b7eb6c6a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1fb1e616c066fde7",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "7efd7ce8be419297",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
+            "id": "977003bce0a25b44",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4a32329b346486f1",
+    "type": "split",
+    "children": [
+      {
+        "id": "88c9369d83b7a0b3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6b7ea3ec5888b7fc",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "reference-card.pdf",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "00d5f7d2bf0438b8",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "reference-card.pdf",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b0b83495eb99819c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "6fc7d58d18ad6809",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "reference-card.pdf"
+              }
+            }
+          },
+          {
+            "id": "9eab23a1546252e7",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 302.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "daily-notes:Open today's daily note": false,
+      "switcher:Open quick switcher": false,
+      "canvas:Create new canvas": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "workspaces:Manage workspace layouts": false
+    }
+  },
+  "active": "c9a130a385607e52",
+  "lastOpenFiles": [
+    "[The Morgan Kaufmann Series in Computer Architecture and Design ] David A. Patterson, John L. Hennessy - Computer Organization and Design RISC-V Edition (2017, Morgan Kaufmann Publishers) - libgen.li.pdf",
+    "lec15.pdf",
+    "17-Multilevel Caches, Cache Questions.md",
+    "16-Caches–Direct mapped, set associative  Set-Associative Cache.md",
+    "15-memory hierarchy.md",
+    "05-disc.pdf",
+    "18 OS.md",
+    "lec21.pdf",
+    "make-you-a-riscv-simulator.final.2.pdf",
+    "lec20.pdf",
+    "20- Input and Output.md",
+    "Pasted image 20231102152441.png",
+    "19- virtual memory.md",
+    "lec19.pdf",
+    "Pasted image 20231102143000.png",
+    "Pasted image 20231102142201.png",
+    "Pasted image 20231102141802.png",
+    "Pasted image 20231102141703.png",
+    "Pasted image 20231102140742.png",
+    "Pasted image 20231101203315.png",
+    "lec18.pdf",
+    "lec16.pdf",
+    "caches.pdf",
+    "Pasted image 20231101202946.png",
+    "Pasted image 20231101193128.png",
+    "Pasted image 20231101175735.png",
+    "Untitled.md",
+    "04-week.md",
+    "2023-10-30.md",
+    "RISC-V-Reader-Chinese-v2p1.pdf",
+    "00-RISC-V 笔记.md",
+    "03-week.md",
+    "03-lab.md",
+    "02-lab.md",
+    "2023-10-28.md",
+    "2023-10-26.md",
+    "Untitled 1.canvas",
+    "Untitled.canvas",
+    "Untitled 2.canvas"
+  ]
+}
